@@ -1,0 +1,58 @@
+{% extends 'job/base.html' %}
+{% load static %}
+
+{% block navigation %}
+{% include 'job/recruiter_navigation.html' %}
+{% endblock navigation %}
+
+{% block content %}
+
+{% if messages %}
+        {% for message in messages %}
+        <p class="alert alert-warning">{{message}}</p>
+        {% endfor %}
+{% endif %}
+
+<div>
+<div class="container">
+    <h4 class="text-center text-warning"><marquee behavior="" direction="left">job list</marquee></h4>
+    <div>
+        <table  class="table  table-hover text-white text-center ">
+            <thead>
+                <tr class="bg-light text-dark fw-bold"  >
+                    <th>S.NO</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Title</th>
+                    <th>salary</th>
+                    <th>Location</th>
+                    <th>Experience</th>
+                    <th>Description</th>
+                    
+
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for j in job %}
+                <tr class="bg-success" >
+                    <td>{{forloop.counter}}</td>
+                    <td>{{j.start_date}}</td> 
+                    <td>{{j.end_date}}</td>              
+                    <td>{{j.title}}</td>
+                    <td>{{j.salary}}</td>
+                    <td>{{j.location}}</td>              
+                    <td>{{j.experience}}</td>              
+                    <td>{{j.description}}</td>  
+                                
+
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+</div>
+{% endblock content %}

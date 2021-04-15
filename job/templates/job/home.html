@@ -1,0 +1,57 @@
+{% extends 'job/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div>
+        <img style="opacity: .2;" width="100%" height="500px" src="{% static 'images/bg1.jpg' %}" alt="loading image..">
+    <h2 id="hero-head1" >hello <span class="text-success">___________</span></h2>
+    <h1 id="hero-head2" class="typed" value='kj'>Find Your Job</h1>
+    <a class="btn btn-success  " id="hero-button1" href="{% url 'user_login' %}"><i class="fas fa-user "></i>&nbsp Student Login &nbsp</a>
+    <a class="btn btn-danger px-4" id="hero-button2" href="{% url 'recruiter_login' %}"><i class="fas fa-user "></i>&nbspRecruiter Login</a>
+
+    </div>
+
+
+<div  class="container bg-dark mt-5 text-light ">
+    <h1 class="text-center text-success">-- Placed Persons --</h1>
+    <hr>
+    <div class="row">
+        <div class="col-sm-4 text-center">
+            <img style="border-radius: 50%;" width="200px" height="220px" src="{% static 'images/c1.jpg'%}" alt="">
+            <p style="font-weight: bold; color: white;background-color: rgba(24, 21, 21,.7); width: 150px; padding: 3px; position: relative;bottom: 30px;left: 110px;" >Facebook</p>
+        </div>
+
+        <div class="col-sm-4 text-center">
+            <img style="border-radius: 50%;" width="200px" height="220px" src="{% static 'images/c2.jpg'%}" alt="">
+            <p style="font-weight: bold; color: black;background-color: rgba(207, 170, 49, 0.7); width: 150px; padding: 3px; position: relative;bottom: 30px;left: 110px;" >Infosys</p>
+        </div>
+
+        <div class="col-sm-4 text-center">
+            <img style="border-radius: 50%;" width="200px" height="220px" src="{% static 'images/c3.jpg'%}" alt="">
+            <p style="font-weight: bold; color: white;background-color: rgba(24, 21, 21,.7); width: 150px; padding: 3px; position: relative;bottom: 30px;left: 110px;" >Wipro</p>
+        </div>
+
+        
+    </div>
+    <div class="row">
+        <div class="col-sm-4 text-center">
+            <img style="border-radius: 50%;" width="200px" height="220px" src="{% static 'images/c2.jpg'%}" alt="">
+            <p style="font-weight: bold; color: black;background-color: rgba(207, 170, 49, 0.7); width: 150px; padding: 3px; position: relative;bottom: 30px;left: 110px;" >Accenture</p>
+        </div>
+
+        <div class="col-sm-4 text-center">
+            <img style="border-radius: 50%;" width="200px" height="220px" src="{% static 'images/c5.jpg'%}" alt="">
+            <p style="font-weight: bold; color: white;background-color: rgba(24, 21, 21,.7); width: 150px; padding: 3px; position: relative;bottom: 30px;left: 110px;" >Mahendra</p>
+        </div>
+
+        <div class="col-sm-4 text-center">
+            <img style="border-radius: 50%;" width="200px" height="220px" src="{% static 'images/c6.jpg'%}" alt="">
+            <p style="font-weight: bold; color: black;background-color: rgba(207, 170, 49, 0.7); width: 150px; padding: 3px; position: relative;bottom: 30px;left: 110px;" >Amazon</p>
+        </div>
+
+        
+    </div>
+</div>
+
+{% endblock content %}

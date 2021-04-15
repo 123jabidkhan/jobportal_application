@@ -1,0 +1,21 @@
+{% extends 'job/base.html' %}
+{% load static %}
+
+{% block navigation %}
+{% include 'job/recruiter_navigation.html' %}
+{% endblock navigation %}
+
+{% block content %}
+
+{% if messages %}
+        {% for message in messages %}
+        <p class="alert alert-warning">{{message}}</p>
+        {% endfor %}
+{% endif %}
+<div style="height: 400px;">
+<div class="container">
+    <h4 class="text-center text-warning"><marquee behavior="" direction="left">Recruiter Profile Page</marquee></h4>
+    
+</div>
+</div>
+{% endblock content %}

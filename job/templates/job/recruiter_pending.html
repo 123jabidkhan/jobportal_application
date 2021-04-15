@@ -1,0 +1,51 @@
+{% extends 'job/base.html' %}
+{% load static %}
+
+{% block navigation %}
+{% include 'job/admin_navigation.html' %}
+{% endblock navigation %}
+
+{% block content %}
+
+<div style="height: 410px;">
+<div class="container-fluid">
+    <h4 class="text-center text-warning"><marquee behavior="" direction="left">Recruiter-Pending</marquee></h4>
+    <div>
+        <table  class="table  table-hover text-white text-center ">
+            <thead>
+                <tr class="bg-light text-dark fw-bold" >
+                    <th>S.NO</th>
+                    <th>FULL NAME</th>
+                    <th>USERNAME</th>
+                    <th>EMAIL ID</th>
+                    <th>CONTACT</th>
+                    <th>GENDER</th>
+                    <th>COMPANY</th>
+                    <th>STATUS</th>
+                    <th>ACTIONS</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for recruiter in recruiter_data %}
+                <tr class="bg-success text-light" >
+                    <td>{{forloop.counter}}</td>
+                    <td>{{recruiter.user.first_name}} {{recruiter.user.last_name}}</td>
+                    <td>{{recruiter.user.username}}</td>
+                    <td>{{recruiter.user.email}}</td>
+                    <td>{{recruiter.contact}}</td>
+                    <td>{{recruiter.gender}}</td>
+                    <td>{{recruiter.company}}</td>
+                    <td>{{recruiter.status}}</td>
+                    <td> <a class="btn btn-success btn-sm" href="{% url 'change_status' recruiter.id %}" >Change Status</a> </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+</div>
+{% endblock content %}

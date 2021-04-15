@@ -1,0 +1,44 @@
+{% extends 'job/base.html' %}
+{% load static %}
+
+{% block navigation %}
+{% include 'job/admin_navigation.html' %}
+{% endblock navigation %}
+
+{% block content %}
+<div style=" margin-top: 20px;" class="container my-5">
+    <h5 class="text-warning" ><marquee  direction="right">Status-Change-Form</marquee></h5>
+
+    {% if messages %}
+    {% for message in messages %}
+    <p class="alert alert-warning">{{message}}</p>
+    {% endfor %}
+    {% endif %}
+
+    <div class="row ">
+        <div class="col-sm-8 offset-2">
+            <h2 style="display: inline-block; border-bottom: yellow solid 1px;">Status-Change-Form</h2>
+            <div>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="username"><b>Full name</b></label>
+                        <input class="form-control" type="text" name="fname" id="fname" value="{{recruiter.user.first_name}} {{recruiter.user.last_name}}" >
+                    </div><br>
+                    <div class="form-group">
+                        <label for="recruiter_status"><b>Status</b></label>
+                        <select name="status" id="recruiter_status" class="form-control">
+                            <option value="Accept">Accept</option>
+                            <option value="Reject">Reject</option>
+                            
+
+
+                        </select>
+                    </div>
+                    <input  type="submit" value="Update Status" class="btn btn-success mt-3 form-control">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
